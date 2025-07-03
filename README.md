@@ -1,19 +1,19 @@
 # Carp in a Pond
 
-A simple, interactive web application that simulates a serene pond environment with animated carp. Experience the calming movement of fish and interact with the water by creating ripples.
+A simple, interactive web application that simulates a serene pond environment with animated fish. Experience the calming movement of fish and interact with the water by creating ripples.
 
 ## Features
 
-*   **Animated Carp:** Multiple colorful carp swim gracefully across the pond.
+*   **Diverse Animated Fish:** Multiple colorful fish (including carp, guppies, and goldfish) swim gracefully across the pond with improved boundary avoidance.
 *   **Interactive Ripples:** Click anywhere on the pond to create a realistic ripple effect.
-*   **Responsive Fish Behavior:** Carp react to your clicks, darting away from the disturbance.
-*   **Visually Engaging:** A relaxing and aesthetically pleasing simulation.
+*   **Responsive Fish Behavior:** Fish react to your clicks, darting away from the disturbance.
+*   **Visually Engaging Environment:** A relaxing and aesthetically pleasing simulation enhanced with lily pads, rocks, swaying water plants, and subtle rising bubbles.
 
 ## Technologies Used
 
 *   **HTML5:** For the basic structure of the web page.
-*   **CSS3:** For styling the pond, carp, and ripple effects, including animations.
-*   **JavaScript (ES6+):** For handling carp movement, interactions, and dynamic elements.
+*   **CSS3:** For styling the pond, fish, and ripple effects, including animations.
+*   **JavaScript (ES6+):** For handling fish movement, interactions, and dynamic elements.
 
 ## How to Run
 

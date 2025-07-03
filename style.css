@@ -8,47 +8,60 @@ body {
     height: 100vh;
     position: relative;
     overflow: hidden;
-    background: radial-gradient(ellipse at center, #172a45 0%, #0a192f 70%);
+    background: radial-gradient(ellipse at center, #87CEEB 0%, #ADD8E6 40%, #B0E0E6 80%, #E0FFFF 100%); /* Brighter, sunlit pond */
     cursor: pointer;
 }
 
-.carp {
+.fish {
     position: absolute;
     transform-origin: 50% 50%;
     filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
 }
 
-.carp-svg {
+.fish-svg {
     overflow: visible;
 }
 
-.carp-body-group {
+.fish-body-group {
     animation: swim-body 2s infinite ease-in-out;
 }
 
-.carp-tail-svg {
-    transform-origin: 50px 15px; /* Connection point to the body */
+.fish-tail-group {
     animation: swim-tail 0.8s infinite ease-in-out;
 }
 
 .lily-pad {
     position: absolute;
-    width: 70px;
-    height: 70px;
+    width: 7vw;
+    height: 7vw;
     background-color: #2e8b57;
     border-radius: 50% 0 50% 50%;
     box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
     opacity: 0.8;
+    animation: float 10s infinite ease-in-out alternate;
 }
 
 .rock {
     position: absolute;
-    width: 50px;
-    height: 40px;
+    width: 5vw;
+    height: 4vw;
     background-color: #5a5a5a;
     border-radius: 40% 60% 40% 60% / 50% 50% 50% 50%;
     box-shadow: inset 0 0 8px rgba(0,0,0,0.6);
     opacity: 0.7;
+    animation: sink 15s infinite ease-in-out alternate;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(10px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes sink {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(5px) scale(0.98); }
+    100% { transform: translateY(0) scale(1); }
 }
 
 .ripple {
@@ -61,33 +74,17 @@ body {
 }
 
 @keyframes swim-tail {
-    0% {
-        transform: rotate(20deg);
-    }
-    50% {
-        transform: rotate(-20deg);
-    }
-    100% {
-        transform: rotate(20deg);
-    }
+    0% { transform: rotate(20deg); }
+    50% { transform: rotate(-20deg); }
+    100% { transform: rotate(20deg); }
 }
 
 @keyframes swim-body {
-    0% {
-        transform: translateX(0) translateY(0);
-    }
-    25% {
-        transform: translateX(2px) translateY(1px);
-    }
-    50% {
-        transform: translateX(0) translateY(0);
-    }
-    75% {
-        transform: translateX(-2px) translateY(-1px);
-    }
-    100% {
-        transform: translateX(0) translateY(0);
-    }
+    0% { transform: translateX(0) translateY(0); }
+    25% { transform: translateX(2px) translateY(1px); }
+    50% { transform: translateX(0) translateY(0); }
+    75% { transform: translateX(-2px) translateY(-1px); }
+    100% { transform: translateX(0) translateY(0); }
 }
 
 @keyframes ripple-effect {
@@ -95,10 +92,63 @@ body {
         width: 0;
         height: 0;
         opacity: 1;
+        border-width: 2px;
     }
     100% {
-        width: 200px;
-        height: 200px;
+        width: 20vw;
+        height: 20vw;
         opacity: 0;
+        border-width: 0;
+    }
+}
+
+.water-plant {
+    position: absolute;
+    width: 1.5vw;
+    height: 8vw;
+    background: linear-gradient(to bottom, #4CAF50, #2E8B57);
+    border-radius: 50% 50% 0 0;
+    transform-origin: bottom center;
+    animation: sway 8s infinite ease-in-out alternate;
+}
+
+@keyframes sway {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
+
+.bubble {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    animation: bubble-rise 8s infinite ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes bubble-rise {
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Basic Responsive Adjustments */
+@media (max-width: 768px) {
+    .fish {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 480px) {
+    .fish {
+        transform: scale(0.6);
     }
 }
